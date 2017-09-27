@@ -9,7 +9,7 @@ class ManageCoursePage extends React.Component {
         super(props, context);
 
         this.state = {
-            course: props.course,
+            course: Object.assign({}, props.course),
             errors: {}
         };
 
@@ -25,7 +25,7 @@ class ManageCoursePage extends React.Component {
     }
 
     saveCourse(event) {
-        event.preventDefault();
+        event.preventDefault();        
         this.props.actions.saveCourse(this.state.course)
             .then(() => this.redirect());
     }
@@ -68,7 +68,7 @@ ManageCoursePage.contextTypes = {
 
 function getCourseById(courses, id) {
   const course = courses.filter(course => course.id == id);
-  if (course.length) return course[0]; //since filter returns an array, have to grab the first.
+  if (course) return course[0]; //since filter returns an array, have to grab the first.
   return null;
 }
 
