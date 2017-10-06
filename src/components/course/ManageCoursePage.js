@@ -5,7 +5,7 @@ import CourseForm from './CourseForm';
 import * as courseAction from '../../actions/courseActions';
 import toastr from 'toastr';
 
-class ManageCoursePage extends React.Component {
+export class ManageCoursePage extends React.Component {
     constructor(props, context) {
         super(props, context);
 
@@ -34,7 +34,7 @@ class ManageCoursePage extends React.Component {
         }
 
         this.setState({save: true});
-        
+
         this.props.actions.saveCourse(this.state.course)
             .then(() => this.redirect())
             .catch(error => {

@@ -8,7 +8,7 @@ describe ('Manage Course Page', () => {
     const props = {
       authors: [],
       actions: { saveCourse: () => { return Promise.resolve(); }},
-      course: {id: '', watchHref: '', title: 'aaaaa', authorId: '', length: '', category: ''}
+      course: {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''}
     };
 
     const wrapper = mount(<ManageCoursePage {...props}/>);
